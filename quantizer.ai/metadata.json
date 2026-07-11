@@ -1,0 +1,6 @@
+{
+  "name": "Quantizer.AI",
+  "description": "Federated Quantized GAN-CNN Pipeline dashboard for scalable, low-latency, and privacy-preserving distributed edge AI inference.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

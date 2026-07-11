@@ -1,0 +1,9 @@
+{
+  "apiKey": "placeholder_api_key",
+  "authDomain": "placeholder_auth_domain",
+  "projectId": "placeholder_project_id",
+  "storageBucket": "placeholder_storage_bucket",
+  "messagingSenderId": "placeholder_messaging_sender_id",
+  "appId": "placeholder_app_id",
+  "firestoreDatabaseId": "(default)"
+}
