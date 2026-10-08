@@ -1,79 +1,156 @@
-# Federated Quantized GAN-CNN Edge Platform
+# Quantizer.ai
 
-An advanced, full-stack simulation and management dashboard for decentralized federated learning pipelines. This platform enables real-time tuning, auditing, and visualization of edge node systems training locally and contributing quantized parameters to a central server, backed by Differential Privacy guarantees and high-reasoning Gemini AI models.
+AI-native federated learning dashboard for designing, monitoring, and optimizing quantized edge intelligence pipelines.
 
----
+Quantizer.ai is a full-stack web platform that simulates a multi-node distributed AI infrastructure where you can orchestrate edge devices, analyze model compression tradeoffs, inspect performance telemetry, and use Gemini-powered assistants to ground decisions in live technical context.
 
-## 🌟 Key Features
+## Why this project exists
 
-### 1. Federated Node Registry & Orbital Map
-- **Orbital Spatial Telemetry**: Interactive, animated radar-style coordinate system showcasing edge nodes orbiting the central aggregation server.
-- **Dynamic Filter Controls**: Real-time filter system to instantly isolate edge nodes by status (`All`, `Online`, `Idle`, or `Offline`).
-- **Edge Node Ingestion**: Instantly register new devices (e.g., *NVIDIA Jetson AGX*, *Raspberry Pi 5*) with designated hardware quantization targets (INT8, FP16, INT4).
+Modern edge AI systems need more than a training loop. They need operational visibility, hardware-aware optimization, and actionable guidance across:
 
-### 2. Gemini Multimodal AI & Grounding Suite
-- **Live Search Grounding**: Real-time web lookup or Google Maps grounding using `gemini-3.5-flash` to pull authoritative technical references and coordinates directly.
-- **Vocal Speech Capture**: Dynamic browser microphone capture and streaming transcription for speech-to-text queries.
-- **Edge GAN Synthesizer**: Generates high-fidelity simulated hardware scan imagery using `gemini-3.1-flash-image` and writes the outputs directly to user-isolated persistent directories.
-- **Video Stream Audit**: Time-series conveyor/drone video stream audits and anomaly classification using `gemini-3.1-pro-preview`.
+- federated learning node health
+- model quantization tradeoffs
+- communication and privacy constraints
+- real-time analytics for accuracy and efficiency
+- AI-assisted debugging and recommendation
 
-### 3. High Thinking Mode Advisor
-- **Deep Reasoning Engine**: Activates `gemini-3.1-pro-preview` with **High Thinking Level** (`ThinkingLevel.HIGH`) to solve hyper-complex optimization challenges in federated systems.
-- **JSON Structured Auditing**: Automatically parses system configurations, active node weights, and learning rate schedules to return optimized hyperparameter guidelines.
+This project brings those concerns into a single interactive workspace.
 
-### 4. GAN-CNN Quantization & Pipeline Visualizer
-- **Interactive Training Dashboard**: Simulates localized gradient steps, aggregation cycles, and accuracy metrics over multiple training epochs.
-- **Compression & Sparsification**: Custom sliders for active learning rate ($\eta$), noise multipliers ($\sigma$) for Differential Privacy, and communication sparsification budgets.
+## Core capabilities
 
----
+### 1. Federated node operations
+- Visualize edge devices on an orbital dashboard
+- Filter nodes by online, idle, and offline states
+- Register simulated hardware such as Jetson, Raspberry Pi, and accelerator-based devices
+- Inspect quantization targets like INT8, FP16, and INT4
 
-## 🛠️ Technology Stack
+### 2. AI-powered analysis
+- Ground technical decisions with Gemini-based live search and map lookups
+- Capture voice input from the browser for conversational prompts
+- Use image synthesis and audit workflows for synthetic inspection data
+- Review reasoning-driven optimization guidance in a high-thinking mode
 
-- **Frontend**: React 18, Vite, Tailwind CSS, Lucide Icons, Recharts, Framer Motion.
-- **Backend**: Express, Node.js, TypeScript, ESBuild.
-- **AI/ML Engine**: Official Google `@google/genai` TypeScript SDK utilizing `gemini-3.5-flash` and `gemini-3.1-pro-preview` models.
-- **Data Isolation**: Structured client workspace uploads stored under `./data/uploads/` partitioned by local auth sessions.
+### 3. Quantization and pipeline intelligence
+- Tune learning rate, noise multiplier, and communication sparsification controls
+- Simulate training epochs and observe downstream accuracy trends
+- Explore how compression impacts latency, robustness, and downstream performance
+- Track metrics from model optimization in a visual dashboard
 
----
+### 4. Full-stack app experience
+- React frontend with animated data panels and dashboards
+- Express backend for API orchestration and model integration
+- Firebase configuration support for app services and persistence
+- Vite-based development workflow with TypeScript-first code structure
 
-## 🚀 Getting Started
+## Tech stack
 
-### 1. Prerequisites
-Define your server-side API keys in a `.env` file at the root of your project:
+- Frontend: React, Vite, TypeScript, CSS
+- Backend: Node.js, Express, TypeScript
+- AI integration: Google Gemini via @google/genai
+- Data/runtime: Firebase, dotenv
+- Build tools: Vite, esbuild, TypeScript
+
+## Project structure
+
+```text
+quantizer.ai/
+├── index.html
+├── package.json
+├── package-lock.json
+├── server.ts
+├── tsconfig.json
+├── vite.config.ts
+├── firebase-applet-config.json
+├── metadata.json
+├── src/
+│   ├── App.tsx
+│   ├── firebase.ts
+│   ├── main.tsx
+│   ├── index.css
+│   ├── types.ts
+│   └── components/
+│       ├── AiAdvisorPanel.tsx
+│       ├── AiGroundingAssistant.tsx
+│       ├── DashboardStats.tsx
+│       ├── DataFeedManager.tsx
+│       ├── FederatedNodeMap.tsx
+│       ├── GanCnnPipelineVisualizer.tsx
+│       ├── MetricsChart.tsx
+│       └── ModelQuantizationPanel.tsx
+└── README.md
+```
+
+## Getting started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+- Google Gemini API key
+
+Create a `.env` file at the project root:
+
 ```env
-# .env
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-### 2. Installation
-Install all backend and client-side dependencies:
+### Install dependencies
+
 ```bash
 npm install
 ```
 
-### 3. Running the App
-Start the unified full-stack dev server (Express + Vite) on port `3000`:
+### Run the app locally
+
 ```bash
 npm run dev
 ```
 
-### 4. Build & Production Start
-Compile both client static assets and the server-side entry point, and execute the production server:
+This starts the app with the Express backend and Vite frontend in a single development workflow.
+
+### Production build
+
 ```bash
 npm run build
 npm run start
 ```
 
+## Important scripts
+
+```json
+{
+  "dev": "tsx server.ts",
+  "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+  "start": "node dist/server.cjs",
+  "lint": "tsc --noEmit"
+}
+```
+
+## Example use cases
+
+- Explore a federated AI deployment across edge nodes
+- Tune model compression strategies before production rollout
+- Use AI guidance to compare quantization choices across workloads
+- Monitor how bandwidth and privacy constraints change optimization decisions
+- Audit distributed model performance with visual analytics
+
+## Notes
+
+This repository is designed as a simulation and product-style dashboard rather than a production deployment package. It is ideal for experimentation, prototype demos, and AI-assisted optimization workflows.
+
+## License
+
+This project does not currently declare a license in the repository metadata. If you plan to reuse or distribute it, add an appropriate open-source license before publishing.
+
+## Acknowledgements
+
+Built for research and experimentation around:
+
+- federated learning
+- edge AI optimization
+- model quantization
+- AI-assisted systems design
+
 ---
 
-## 📂 File Architecture
-
-- `/server.ts` - Express backend with custom API routes, Vite middleware configurations, and Gemini integrations.
-- `/src/App.tsx` - Root application dashboard with tab navigation, telemetry banners, and central state coordinators.
-- `/src/components/` - Highly modular interactive UI components:
-  - `FederatedNodeMap.tsx` - Orbital visualization panel with live node filtering.
-  - `AiGroundingAssistant.tsx` - Tabbed multimodal suite for grounding, voice, video, and image synthesis.
-  - `AiAdvisorPanel.tsx` - Advisor report card matching High Thinking Gemini audits.
-  - `GanCnnPipelineVisualizer.tsx` - Continuous canvas training loop charts.
-  - `ModelQuantizationPanel.tsx` - Sparsification slider panels.
-- `/src/types.ts` - Standardized TypeScript type systems, states, and telemetry interfaces.
+Quantizer.ai blends distributed systems thinking with interactive AI tooling to help teams reason about the operational realities of modern edge intelligence.
