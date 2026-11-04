@@ -2,6 +2,19 @@
 
 A professional AI-powered federated learning and model optimization platform for designing, monitoring, and improving quantized edge intelligence systems.
 
+## Featured Components
+
+These are the core UI and intelligence modules that drive the experience of Quantizer.ai:
+
+- AI Advisor Panel — intelligent optimization guidance and AI-driven recommendations
+- AI Grounding Assistant — grounded technical reasoning and decision support
+- Federated Node Map — distributed edge-device visualization across the network
+- Model Quantization Panel — compression strategy tuning and tradeoff analysis
+- Metrics Chart — live performance, accuracy, and efficiency analytics
+- Dashboard Stats — summary metrics for system health and operational insights
+- Data Feed Manager — data stream orchestration and monitoring
+- GAN/CNN Pipeline Visualizer — model pipeline and architecture visualization
+
 Quantizer.ai is a full-stack web application that simulates a distributed AI infrastructure across edge devices, model quantization workflows, and operational decision-making. It is designed to help researchers, engineers, and AI teams evaluate how compression strategies, bandwidth constraints, and privacy-aware training decisions affect performance in real-world edge deployments.
 
 ## Overview
